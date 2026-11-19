@@ -1,0 +1,10 @@
+project: savantenvs/flint
+target: fuzz_gr_set_str
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_gr_set_str/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_gr_set_str
+    libfuzzer: true
+    timeout: 60
+    dictionary: /mayhem/mayhem/fuzz_gr_set_str/fuzz_gr_set_str.dict

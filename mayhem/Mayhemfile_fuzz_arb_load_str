@@ -1,0 +1,10 @@
+project: savantenvs/flint
+target: fuzz_arb_load_str
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_arb_load_str/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_arb_load_str
+    libfuzzer: true
+    timeout: 60
+    dictionary: /mayhem/mayhem/fuzz_arb_load_str/fuzz_arb_load_str.dict

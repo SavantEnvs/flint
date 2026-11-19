@@ -1,0 +1,10 @@
+project: savantenvs/flint
+target: fuzz_fread_stream
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_fread_stream/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_fread_stream
+    libfuzzer: true
+    timeout: 60
+    dictionary: /mayhem/mayhem/fuzz_fread_stream/fuzz_fread_stream.dict

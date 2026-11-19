@@ -1,0 +1,9 @@
+project: savantenvs/flint
+target: fuzz_fmpz_poly_remove
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_fmpz_poly_remove/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_fmpz_poly_remove
+    libfuzzer: true
+    timeout: 60
